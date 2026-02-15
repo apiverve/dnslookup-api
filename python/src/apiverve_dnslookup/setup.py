@@ -10,20 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_dnslookup',
-    version='1.1.12',
+    version='1.1.13',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     description='DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com',
-    project_urls={
-        'Homepage': 'https://apiverve.com',
-        'Documentation': 'https://docs.apiverve.com/ref/dnslookup',
-        'Source': 'https://github.com/apiverve/dnslookup-api',
-        'Bug Tracker': 'https://github.com/apiverve/dnslookup-api/issues'
-    },
+    url='https://dnslookup.apiverve.com?utm_source=pypi&utm_medium=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
