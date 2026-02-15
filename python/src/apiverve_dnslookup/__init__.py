@@ -1,1 +1,3 @@
-from .apiClient import DnslookupAPIClient
+from .apiClient import DnslookupAPIClient, DnslookupAPIClientError
+
+__all__ = ['DnslookupAPIClient', 'DnslookupAPIClientError']
