@@ -12,7 +12,6 @@ namespace APIVerve.API.DNSLookup
     {
         /// <summary>
         /// The domain name for which you want to lookup the DNS records. Do not include the protocol, and not subdomains (e.g., myspace.com)
-        /// Example: myspace.com
         /// </summary>
         [JsonProperty("domain")]
         public string Domain { get; set; }
