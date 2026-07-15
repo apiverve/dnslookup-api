@@ -4,40 +4,59 @@ declare module '@apiverve/dnslookup' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface dnslookupResponse {
     status: string;
     error: string | null;
     data: DNSLookupData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface DNSLookupData {
-      domain:  string;
+      domain:  null | string;
       records: Records;
+      summary: Summary;
   }
   
   interface Records {
-      a:   string[];
-      ns:  string[];
-      soa: SOA;
+      a:   (null | string)[];
       mx:  MX[];
-      txt: Array<string[]>;
+      ns:  (null | string)[];
+      soa: SOA;
+      txt: (null | string)[];
   }
   
   interface MX {
-      exchange: string;
-      priority: number;
+      exchange: null | string;
+      priority: number | null;
   }
   
   interface SOA {
-      nsname:     string;
-      hostmaster: string;
-      serial:     number;
-      refresh:    number;
-      retry:      number;
-      expire:     number;
-      minttl:     number;
+      nsname:     null | string;
+      hostmaster: null | string;
+      serial:     number | null;
+      refresh:    number | null;
+      retry:      number | null;
+      expire:     number | null;
+      minttl:     number | null;
+  }
+  
+  interface Summary {
+      hasIPv6:        boolean | null;
+      hasMailServers: boolean | null;
+      hasSPF:         boolean | null;
   }
 
   export default class dnslookupWrapper {
