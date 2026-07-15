@@ -104,6 +104,10 @@ paths:
                         ip4:168.235.224.0/24 include:_netblocks.mimecast.com
                         -all
                       - cj65vjpq0s1v9u7vfo020c6rel
+                  summary:
+                    hasIPv6: false
+                    hasMailServers: true
+                    hasSPF: true
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
