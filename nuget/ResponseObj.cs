@@ -25,6 +25,9 @@ namespace APIVerve.API.DNSLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -34,6 +37,9 @@ namespace APIVerve.API.DNSLookup
 
         [JsonProperty("records")]
         public Records Records { get; set; }
+
+        [JsonProperty("summary")]
+        public Summary Summary { get; set; }
     }
 
     public partial class Records
@@ -41,17 +47,17 @@ namespace APIVerve.API.DNSLookup
         [JsonProperty("A")]
         public string[] A { get; set; }
 
+        [JsonProperty("MX")]
+        public Mx[] Mx { get; set; }
+
         [JsonProperty("NS")]
         public string[] Ns { get; set; }
 
         [JsonProperty("SOA")]
         public Soa Soa { get; set; }
 
-        [JsonProperty("MX")]
-        public Mx[] Mx { get; set; }
-
         [JsonProperty("TXT")]
-        public string[][] Txt { get; set; }
+        public string[] Txt { get; set; }
     }
 
     public partial class Mx
@@ -60,7 +66,7 @@ namespace APIVerve.API.DNSLookup
         public string Exchange { get; set; }
 
         [JsonProperty("priority")]
-        public long Priority { get; set; }
+        public long? Priority { get; set; }
     }
 
     public partial class Soa
@@ -72,18 +78,42 @@ namespace APIVerve.API.DNSLookup
         public string Hostmaster { get; set; }
 
         [JsonProperty("serial")]
-        public long Serial { get; set; }
+        public long? Serial { get; set; }
 
         [JsonProperty("refresh")]
-        public long Refresh { get; set; }
+        public long? Refresh { get; set; }
 
         [JsonProperty("retry")]
-        public long Retry { get; set; }
+        public long? Retry { get; set; }
 
         [JsonProperty("expire")]
-        public long Expire { get; set; }
+        public long? Expire { get; set; }
 
         [JsonProperty("minttl")]
-        public long Minttl { get; set; }
+        public long? Minttl { get; set; }
+    }
+
+    public partial class Summary
+    {
+        [JsonProperty("hasIPv6")]
+        public bool? HasIPv6 { get; set; }
+
+        [JsonProperty("hasMailServers")]
+        public bool? HasMailServers { get; set; }
+
+        [JsonProperty("hasSPF")]
+        public bool? HasSpf { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
