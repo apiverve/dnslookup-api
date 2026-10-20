@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/dnslookup",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.",
   "main": "index.js",
   "types": "index.d.ts",
