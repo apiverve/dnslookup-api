@@ -4,7 +4,7 @@
     <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>DNSLookup</Title>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -12,12 +12,12 @@
 
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <PackageProjectUrl>https://dnslookup.apiverve.com?utm_source=nuget&amp;utm_medium=homepage</PackageProjectUrl>
+    <PackageProjectUrl>https://apiverve.com/marketplace/dnslookup?utm_source=nuget&amp;utm_medium=referral&amp;utm_content=homepage</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
-    <Description>DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.</Description>
+    <Description>DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.</Description>
     <RepositoryUrl>https://github.com/apiverve/dnslookup-api</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>dns;dns lookup;dns records;dns lookup api;dns records api;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
+    <PackageTags>dns lookup api;dns api;dns checker api;ns lookup api;dns query api;api;rest;http;client;apiverve;wrapper;sdk</PackageTags>
     <Copyright>©2026 APIVerve. All Rights Reserved</Copyright>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageIcon>favicon@128.png</PackageIcon>
