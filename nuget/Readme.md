@@ -1,4 +1,4 @@
-DNSLookup API
+DNS Lookup API
 ============
 
 DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.
@@ -6,7 +6,7 @@ DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), I
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.DNSLookup.svg)](https://www.nuget.org/packages/APIVerve.API.DNSLookup)
 
-This is a .NET wrapper for the [DNSLookup API](https://apiverve.com/marketplace/dnslookup?utm_source=nuget&utm_medium=referral&utm_content=readme)
+This is a .NET wrapper for the [DNS Lookup API](https://apiverve.com/marketplace/dnslookup?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -39,7 +39,7 @@ From within Visual Studio:
 
 ## Configuration
 
-Before using the dnslookup API client, you have to setup your account and obtain your API Key.
+Before using the DNS Lookup API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
@@ -60,8 +60,8 @@ class Program
         var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new DNSLookupQueryOptions {
-    Domain = "myspace.com"
-};
+            Domain = "myspace.com"
+        };
 
         // Make the API call
         try
@@ -91,13 +91,13 @@ class Program
 
 ## Usage
 
-The DNSLookup API documentation is found here: [https://docs.apiverve.com/ref/dnslookup](https://docs.apiverve.com/ref/dnslookup?utm_source=nuget&utm_medium=referral&utm_content=readme).
+The DNS Lookup API documentation is found here: [https://docs.apiverve.com/ref/dnslookup](https://docs.apiverve.com/ref/dnslookup?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-DNSLookup API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+DNS Lookup API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -124,8 +124,8 @@ public class Example
         var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new DNSLookupQueryOptions {
-    Domain = "myspace.com"
-};
+            Domain = "myspace.com"
+        };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
 
@@ -156,8 +156,8 @@ public class Example
         var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new DNSLookupQueryOptions {
-    Domain = "myspace.com"
-};
+            Domain = "myspace.com"
+        };
 
         var response = apiClient.Execute(queryOptions);
 
@@ -193,8 +193,8 @@ public class Example
         var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new DNSLookupQueryOptions {
-    Domain = "myspace.com"
-};
+            Domain = "myspace.com"
+        };
 
         try
         {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new DNSLookupQueryOptions {
-    Domain = "myspace.com"
-};
+            Domain = "myspace.com"
+        };
 
         try
         {
