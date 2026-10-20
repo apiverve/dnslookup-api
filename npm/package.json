@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/dnslookup",
-  "version": "1.2.0",
-  "description": "DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.",
+  "version": "1.2.1",
+  "description": "DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "dns", "dns lookup", "dns records", "dns lookup api", "dns records api"
+    "dns lookup api", "dns api", "dns checker api", "ns lookup api", "dns query api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/dnslookup-api/issues"
   },
-  "homepage": "https://dnslookup.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/dnslookup?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
