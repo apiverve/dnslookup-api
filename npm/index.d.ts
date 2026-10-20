@@ -31,11 +31,16 @@ declare module '@apiverve/dnslookup' {
   }
   
   interface Records {
-      a:   (null | string)[];
-      mx:  MX[];
-      ns:  (null | string)[];
-      soa: SOA;
-      txt: (null | string)[];
+      a:     (null | string)[];
+      aaaa:  null;
+      cname: null;
+      mx:    MX[];
+      ns:    (null | string)[];
+      ptr:   null;
+      srv:   null;
+      soa:   SOA;
+      txt:   (null | string)[];
+      caa:   null;
   }
   
   interface MX {
