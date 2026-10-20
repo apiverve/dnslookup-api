@@ -47,17 +47,32 @@ namespace APIVerve.API.DNSLookup
         [JsonProperty("A")]
         public string[] A { get; set; }
 
+        [JsonProperty("AAAA")]
+        public object Aaaa { get; set; }
+
+        [JsonProperty("CNAME")]
+        public object Cname { get; set; }
+
         [JsonProperty("MX")]
         public Mx[] Mx { get; set; }
 
         [JsonProperty("NS")]
         public string[] Ns { get; set; }
 
+        [JsonProperty("PTR")]
+        public object Ptr { get; set; }
+
+        [JsonProperty("SRV")]
+        public object Srv { get; set; }
+
         [JsonProperty("SOA")]
         public Soa Soa { get; set; }
 
         [JsonProperty("TXT")]
         public string[] Txt { get; set; }
+
+        [JsonProperty("CAA")]
+        public object Caa { get; set; }
     }
 
     public partial class Mx
