@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: DNS Lookup
   description: >-
-    DNS Lookup is a simple tool for looking up the DNS records of a domain. It
-    returns the A, MX, and other records of the domain.
+    DNS Lookup retrieves published DNS records for any domain, including IPv4
+    (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames,
+    priorities, and dual-stack status flags, while paid plans add TXT, CNAME,
+    and nameserver records.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/dnslookup:
     get:
-      summary: Lookup DNS
+      summary: DNS Lookup
       description: Lookup the DNS records of a domain
       operationId: dnslookup
       parameters:
@@ -56,6 +58,8 @@ paths:
                   records:
                     A:
                       - 34.111.176.156
+                    AAAA: null
+                    CNAME: null
                     MX:
                       - exchange: us-smtp-inbound-1.mimecast.com
                         priority: 10
@@ -66,6 +70,8 @@ paths:
                       - ns-cloud-a1.googledomains.com
                       - ns-cloud-a2.googledomains.com
                       - ns-cloud-a3.googledomains.com
+                    PTR: null
+                    SRV: null
                     SOA:
                       nsname: ns-cloud-a1.googledomains.com
                       hostmaster: cloud-dns-hostmaster.google.com
@@ -76,15 +82,11 @@ paths:
                       minttl: 300
                     TXT:
                       - cr40m536tje9on1slld9bi81bg
-                      - >-
-                        qpdYoeakhlmAxsnmxgAVFmJgUSibqb/y+Eu6GGn8pdmLf+mFGIB3jhRAxIC5KObsPMES9MW2c+oOrpOo/lCQVw==
-                      - >-
-                        oZ19a+EOIwWVDPJ7POj14UAGBfzk9xcJMmsTUAMUy7H82sDuVCxvw9rZqdg3znFrdTH04+49zd1djhEAt0ooiA==
+                      - qpdYoeakhlmAxsnmxgAVFmJgUSibqb/y+Eu6GGn8pdmLf+mFGIB3jhRAxIC5KObsPMES9MW2c+oOrpOo/lCQVw==
+                      - oZ19a+EOIwWVDPJ7POj14UAGBfzk9xcJMmsTUAMUy7H82sDuVCxvw9rZqdg3znFrdTH04+49zd1djhEAt0ooiA==
                       - MS=ms89904786
-                      - >-
-                        google-site-verification=eu-3gW1JePvsGRRCaEvH17YUOTFJNofm4lnz2Pk0LTc
-                      - >-
-                        google-site-verification=q0iWqpcfOBclAJaCeWh83v62QQ4uCgbWObQ08p37qgU
+                      - google-site-verification=eu-3gW1JePvsGRRCaEvH17YUOTFJNofm4lnz2Pk0LTc
+                      - google-site-verification=q0iWqpcfOBclAJaCeWh83v62QQ4uCgbWObQ08p37qgU
                       - al4upe6q5cl13sg4srvfivflvg
                       - >-
                         v=spf1 mx ip4:63.208.226.34 ip4:204.16.32.0/22
@@ -104,6 +106,7 @@ paths:
                         ip4:168.235.224.0/24 include:_netblocks.mimecast.com
                         -all
                       - cj65vjpq0s1v9u7vfo020c6rel
+                    CAA: null
                   summary:
                     hasIPv6: false
                     hasMailServers: true
