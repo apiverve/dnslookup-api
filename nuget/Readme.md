@@ -1,13 +1,12 @@
 DNSLookup API
 ============
 
-DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.
+DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [DNSLookup API](https://dnslookup.apiverve.com?utm_source=nuget&utm_medium=readme)
+[![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.DNSLookup.svg)](https://www.nuget.org/packages/APIVerve.API.DNSLookup)
+
+This is a .NET wrapper for the [DNSLookup API](https://apiverve.com/marketplace/dnslookup?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -41,7 +40,7 @@ From within Visual Studio:
 ## Configuration
 
 Before using the dnslookup API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -92,7 +91,7 @@ class Program
 
 ## Usage
 
-The DNSLookup API documentation is found here: [https://docs.apiverve.com/ref/dnslookup](https://docs.apiverve.com/ref/dnslookup?utm_source=nuget&utm_medium=readme).
+The DNSLookup API documentation is found here: [https://docs.apiverve.com/ref/dnslookup](https://docs.apiverve.com/ref/dnslookup?utm_source=nuget&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -372,6 +371,8 @@ using (var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]"))
       "A": [
         "34.111.176.156"
       ],
+      "AAAA": null,
+      "CNAME": null,
       "MX": [
         {
           "exchange": "us-smtp-inbound-1.mimecast.com",
@@ -388,6 +389,8 @@ using (var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]"))
         "ns-cloud-a2.googledomains.com",
         "ns-cloud-a3.googledomains.com"
       ],
+      "PTR": null,
+      "SRV": null,
       "SOA": {
         "nsname": "ns-cloud-a1.googledomains.com",
         "hostmaster": "cloud-dns-hostmaster.google.com",
@@ -407,7 +410,8 @@ using (var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]"))
         "al4upe6q5cl13sg4srvfivflvg",
         "v=spf1 mx ip4:63.208.226.34 ip4:204.16.32.0/22 ip4:67.134.143.0/24 ip4:216.205.243.0/24 ip4:34.85.156.5/32 ip4:35.245.108.108/32 ip4:34.86.129.193/32 ip4:34.86.134.94/32 ip4:34.85.222.234/32 ip4:34.86.176.234/32 ip4:34.86.125.212/32 ip4:34.85.224.60/32 ip4:34.86.160.49/32 ip4:35.245.64.166/32 ip4:35.188.226.11/32 ip4:34.86.208.228/32 ip4:34.85.216.144/32 ip4:35.221.22.153/32 ip4:34.86.137.108/32 ip4:34.86.51.35/32 ip4:34.150.221.40/32 ip4:34.85.216.70/32 ip4:34.86.37.191/32 ip4:34.85.214.215/32 ip4:35.236.234.82/32 ip4:34.86.161.241/32 ip4:216.32.181.16 ip4:216.178.32.0/20 ip4:168.235.224.0/24 include:_netblocks.mimecast.com -all",
         "cj65vjpq0s1v9u7vfo020c6rel"
-      ]
+      ],
+      "CAA": null
     },
     "summary": {
       "hasIPv6": false,
@@ -422,7 +426,7 @@ using (var apiClient = new DNSLookupAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -433,12 +437,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
