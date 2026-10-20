@@ -28,7 +28,7 @@ pip3 install apiverve-dnslookup
 
 ## Configuration
 
-Before using the dnslookup API client, you have to setup your account and obtain your API Key.
+Before using the DNS Lookup API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
