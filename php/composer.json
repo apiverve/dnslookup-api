@@ -1,7 +1,7 @@
 {
     "name": "apiverve/dnslookup",
-    "description": "DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.",
-    "version": "1.2.0",
+    "description": "DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "dnslookup",
-        "dns",
-        "dns lookup",
-        "dns records",
         "dns lookup api",
-        "dns records api"
+        "dns api",
+        "dns checker api",
+        "ns lookup api",
+        "dns query api"
     ],
-    "homepage": "https://dnslookup.apiverve.com?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/dnslookup?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/dnslookup",

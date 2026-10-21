@@ -1,6 +1,6 @@
 # DNS Lookup API - PHP Package
 
-DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.
+DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.
 
 ## Installation
 
@@ -74,6 +74,8 @@ $client = new Client(
       "A": [
         "34.111.176.156"
       ],
+      "AAAA": null,
+      "CNAME": null,
       "MX": [
         {
           "exchange": "us-smtp-inbound-1.mimecast.com",
@@ -90,6 +92,8 @@ $client = new Client(
         "ns-cloud-a2.googledomains.com",
         "ns-cloud-a3.googledomains.com"
       ],
+      "PTR": null,
+      "SRV": null,
       "SOA": {
         "nsname": "ns-cloud-a1.googledomains.com",
         "hostmaster": "cloud-dns-hostmaster.google.com",
@@ -109,7 +113,8 @@ $client = new Client(
         "al4upe6q5cl13sg4srvfivflvg",
         "v=spf1 mx ip4:63.208.226.34 ip4:204.16.32.0/22 ip4:67.134.143.0/24 ip4:216.205.243.0/24 ip4:34.85.156.5/32 ip4:35.245.108.108/32 ip4:34.86.129.193/32 ip4:34.86.134.94/32 ip4:34.85.222.234/32 ip4:34.86.176.234/32 ip4:34.86.125.212/32 ip4:34.85.224.60/32 ip4:34.86.160.49/32 ip4:35.245.64.166/32 ip4:35.188.226.11/32 ip4:34.86.208.228/32 ip4:34.85.216.144/32 ip4:35.221.22.153/32 ip4:34.86.137.108/32 ip4:34.86.51.35/32 ip4:34.150.221.40/32 ip4:34.85.216.70/32 ip4:34.86.37.191/32 ip4:34.85.214.215/32 ip4:35.236.234.82/32 ip4:34.86.161.241/32 ip4:216.32.181.16 ip4:216.178.32.0/20 ip4:168.235.224.0/24 include:_netblocks.mimecast.com -all",
         "cj65vjpq0s1v9u7vfo020c6rel"
-      ]
+      ],
+      "CAA": null
     },
     "summary": {
       "hasIPv6": false,
@@ -127,11 +132,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/dnslookup?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/dnslookup?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://dnslookup.apiverve.com?utm_source=php&utm_medium=readme](https://dnslookup.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/dnslookup?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/dnslookup?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License

@@ -19,7 +19,7 @@ use APIVerve\Dnslookup\Exceptions\ValidationException;
  * print_r($response);
  * ```
  *
- * @see https://dnslookup.apiverve.com?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/dnslookup?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
