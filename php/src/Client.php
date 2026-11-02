@@ -15,7 +15,7 @@ use APIVerve\Dnslookup\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['domain' => 'myspace.com']);
+ * $response = $client->execute(['domain' => 'myspace.com', 'type' => 'A,MX,TXT']);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'domain' => ['type' => 'string', 'required' => true, 'format' => 'domain']
+        'domain' => ['type' => 'string', 'required' => true, 'maxLength' => 253],
+        'type' => ['type' => 'string', 'required' => false]
     ];
 
     /**
