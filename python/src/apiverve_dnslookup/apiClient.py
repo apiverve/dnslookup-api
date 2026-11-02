@@ -24,7 +24,8 @@ class ValidationError(DnslookupAPIClientError):
 class DnslookupAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "domain": {"type": "string", "required": True, "format": "domain"}
+        "domain": {"type": "string", "required": True, "maxLength": 253},
+        "type": {"type": "string", "required": False}
     }
 
     # Format validation patterns
