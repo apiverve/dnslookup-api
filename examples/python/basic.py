@@ -18,7 +18,7 @@ def call_dnslookup_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;domain&#x27;: &#x27;myspace.com&#x27;}
+        params &#x3D; {&#x27;domain&#x27;: &#x27;myspace.com&#x27;, &#x27;type&#x27;: &#x27;A,MX,TXT&#x27;}
 
         headers = {
             'x-api-key': API_KEY

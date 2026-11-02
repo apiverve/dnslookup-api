@@ -15,7 +15,8 @@ async function callDNSLookupAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            domain: &#x27;myspace.com&#x27;
+            domain: &#x27;myspace.com&#x27;,
+            type: &#x27;A,MX,TXT&#x27;
         });
 
     const response = await fetch(`${API_URL}?${params}`, {
