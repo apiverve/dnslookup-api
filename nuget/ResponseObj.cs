@@ -38,6 +38,9 @@ namespace APIVerve.API.DNSLookup
         [JsonProperty("records")]
         public Records Records { get; set; }
 
+        [JsonProperty("ttl")]
+        public Dictionary<string, long?> Ttl { get; set; }
+
         [JsonProperty("summary")]
         public Summary Summary { get; set; }
     }
@@ -48,7 +51,7 @@ namespace APIVerve.API.DNSLookup
         public string[] A { get; set; }
 
         [JsonProperty("AAAA")]
-        public object Aaaa { get; set; }
+        public string[] Aaaa { get; set; }
 
         [JsonProperty("CNAME")]
         public object Cname { get; set; }
@@ -69,10 +72,19 @@ namespace APIVerve.API.DNSLookup
         public Soa Soa { get; set; }
 
         [JsonProperty("TXT")]
-        public string[] Txt { get; set; }
+        public string[][] Txt { get; set; }
 
         [JsonProperty("CAA")]
-        public object Caa { get; set; }
+        public Caa[] Caa { get; set; }
+    }
+
+    public partial class Caa
+    {
+        [JsonProperty("critical")]
+        public long? Critical { get; set; }
+
+        [JsonProperty("issue")]
+        public string Issue { get; set; }
     }
 
     public partial class Mx
