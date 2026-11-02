@@ -27,20 +27,26 @@ declare module '@apiverve/dnslookup' {
   interface DNSLookupData {
       domain:  null | string;
       records: Records;
+      ttl:     { [key: string]: number | null };
       summary: Summary;
   }
   
   interface Records {
       a:     (null | string)[];
-      aaaa:  null;
+      aaaa:  (null | string)[];
       cname: null;
       mx:    MX[];
       ns:    (null | string)[];
       ptr:   null;
       srv:   null;
       soa:   SOA;
-      txt:   (null | string)[];
-      caa:   null;
+      txt:   Array<(null | string)[]>;
+      caa:   Caa[];
+  }
+  
+  interface Caa {
+      critical: number | null;
+      issue:    null | string;
   }
   
   interface MX {

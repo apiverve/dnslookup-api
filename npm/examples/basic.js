@@ -15,7 +15,8 @@ const api = new dnslookupAPI({
 
 // Example query
 var query = {
-  domain: "myspace.com"
+  domain: "myspace.com",
+  type: "A,MX,TXT"
 };
 
 // Make the API request using callback

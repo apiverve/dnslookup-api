@@ -30,7 +30,7 @@ class dnslookupWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/dnslookup';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"domain":{"type":"string","required":true,"format":"domain"}};
+        this.validationRules = {"domain":{"type":"string","required":true,"maxLength":253},"type":{"type":"string","required":false}};
     }
 
     /**
