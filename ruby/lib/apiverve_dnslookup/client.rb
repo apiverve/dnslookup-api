@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Dnslookup::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ domain: "myspace.com" })
+    #   response = client.execute({ domain: "myspace.com", type: "A,MX,TXT" })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/dnslookup?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'domain' => { type: 'string', required: true, format: 'domain' } }
+      VALIDATION_RULES = { 'domain' => { type: 'string', required: true, max_length: 253 }, 'type' => { type: 'string', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
