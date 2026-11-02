@@ -1,11 +1,11 @@
 # DNS Lookup API - Dart/Flutter Client
 
-DNS Lookup is a simple tool for looking up the DNS records of a domain. It returns the A, MX, and other records of the domain.
+DNS Lookup retrieves published DNS records for any domain, including IPv4 (A), IPv6 (AAAA), and mail exchange (MX) servers. It provides hostnames, priorities, and dual-stack status flags, while paid plans add TXT, CNAME, and nameserver records.
 
 [![pub package](https://img.shields.io/pub/v/apiverve_dnslookup.svg)](https://pub.dev/packages/apiverve_dnslookup)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [DNS Lookup API](https://dnslookup.apiverve.com?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [DNS Lookup API](https://apiverve.com/marketplace/dnslookup?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_dnslookup: ^1.1.14
+  apiverve_dnslookup: ^1.2.4
 ```
 
 Then run:
@@ -34,7 +34,8 @@ void main() async {
 
   try {
     final response = await client.execute({
-      'domain': 'myspace.com'
+      'domain': 'myspace.com',
+      'type': 'A,MX,TXT'
     });
 
     print('Status: ${response.status}');
@@ -52,68 +53,122 @@ void main() async {
   "status": "ok",
   "error": null,
   "data": {
-    "domain": "myspace.com",
+    "domain": "google.com",
     "records": {
       "A": [
-        "34.111.176.156"
+        "172.253.156.100",
+        "172.253.156.113",
+        "172.253.156.101",
+        "172.253.156.139",
+        "172.253.156.138",
+        "172.253.156.102"
       ],
-      "NS": [
-        "ns-cloud-a1.googledomains.com",
-        "ns-cloud-a3.googledomains.com",
-        "ns-cloud-a4.googledomains.com",
-        "ns-cloud-a2.googledomains.com"
+      "AAAA": [
+        "2607:f8b0:4023:100d::65",
+        "2607:f8b0:4023:100d::8a",
+        "2607:f8b0:4023:100d::71",
+        "2607:f8b0:4023:100d::64"
       ],
-      "SOA": {
-        "nsname": "ns-cloud-a1.googledomains.com",
-        "hostmaster": "cloud-dns-hostmaster.google.com",
-        "serial": 2,
-        "refresh": 21600,
-        "retry": 3600,
-        "expire": 259200,
-        "minttl": 300
-      },
+      "CNAME": null,
       "MX": [
         {
-          "exchange": "us-smtp-inbound-1.mimecast.com",
-          "priority": 10
-        },
-        {
-          "exchange": "us-smtp-inbound-2.mimecast.com",
+          "exchange": "smtp.google.com",
           "priority": 10
         }
       ],
+      "NS": [
+        "ns4.google.com",
+        "ns3.google.com",
+        "ns2.google.com",
+        "ns1.google.com"
+      ],
+      "PTR": null,
+      "SRV": null,
+      "SOA": {
+        "nsname": "ns1.google.com",
+        "hostmaster": "dns-admin.google.com",
+        "serial": 1005474929,
+        "refresh": 900,
+        "retry": 900,
+        "expire": 1800,
+        "minttl": 60
+      },
       "TXT": [
         [
-          "al4upe6q5cl13sg4srvfivflvg"
+          "onetrust-domain-verification=0d477fe608074e6f9c12bca7826035cc"
         ],
         [
-          "oZ19a+EOIwWVDPJ7POj14UAGBfzk9xcJMmsTUAMUy7H82sDuVCxvw9rZqdg3znFrdTH04+49zd1djhEAt0ooiA=="
+          "work-accounts-domain-verification=Tcj6JjIMZOw2KsSEw2Nt2rLae89tN6"
         ],
         [
-          "qpdYoeakhlmAxsnmxgAVFmJgUSibqb/y+Eu6GGn8pdmLf+mFGIB3jhRAxIC5KObsPMES9MW2c+oOrpOo/lCQVw=="
+          "google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"
         ],
         [
-          "google-site-verification=q0iWqpcfOBclAJaCeWh83v62QQ4uCgbWObQ08p37qgU"
+          "Z29vZ2xl"
         ],
         [
-          "cr40m536tje9on1slld9bi81bg"
+          "globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
         ],
         [
-          "cj65vjpq0s1v9u7vfo020c6rel"
+          "arcules-domain-verification=2R4t5G7nI6tRCo61lpxxbLksPYstxhGmtV75cpr8x9K"
         ],
         [
-          "google-site-verification=eu-3gW1JePvsGRRCaEvH17YUOTFJNofm4lnz2Pk0LTc"
+          "v=spf1 include:_spf.google.com ~all"
         ],
         [
-          "MS=ms89904786"
+          "_r4rd1pvwyrpi7sw4a3hzmw8e51yh9td"
         ],
         [
-          "v=spf1 mx ip4:63.208.226.34 ip4:204.16.32.0/22 ip4:67.134.143.0/24 ip4:216.205.243.0/24 ip4:34.85.156.5/32 ip4:35.245.108.108/32 ip4:34.86.129.193/32 ip4:34.86.134.94/32 ",
-          "ip4:34.85.222.234/32 ip4:34.86.176.234/32 ip4:34.86.125.212/32 ip4:34.85.224.60/32 ip4:34.86.160.49/32 ip4:35.245.64.166/32 ip4:35.188.226.11/32 ",
-          "ip4:34.86.208.228/32 ip4:34.85.216.144/32 ip4:35.221.22.153/32 ip4:34.86.137.108/32 ip4:34.86.51.35/32 ip4:34.150.221.40/32 ip4:34.85.216.70/32 ip4:34.86.37.191/32 ip4:34.85.214.215/32 ",
-          "ip4:35.236.234.82/32 ip4:34.86.161.241/32 ip4:216.32.181.16 ip4:216.178.32.0/20 ip4:168.235.224.0/24 include:_netblocks.mimecast.com -all"
+          "apple-domain-verification=30afIBcvSuDV2PLX"
+        ],
+        [
+          "onetrust-domain-verification=6d685f1d41a94696ad7ef771f68993e0"
+        ],
+        [
+          "facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95"
+        ],
+        [
+          "google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ"
+        ],
+        [
+          "MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB"
+        ],
+        [
+          "docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e"
+        ],
+        [
+          "google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0"
+        ],
+        [
+          "docusign=1b0a6754-49b1-4db5-8540-d2c12664b289"
+        ],
+        [
+          "cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b"
         ]
+      ],
+      "CAA": [
+        {
+          "critical": 0,
+          "issue": "pki.goog"
+        }
       ]
+    },
+    "ttl": {
+      "A": 10,
+      "AAAA": 2,
+      "CNAME": null,
+      "MX": 74,
+      "NS": 15382,
+      "PTR": null,
+      "SRV": null,
+      "SOA": 25,
+      "TXT": 300,
+      "CAA": 21600
+    },
+    "summary": {
+      "hasIPv6": true,
+      "hasMailServers": true,
+      "hasSPF": true
     }
   }
 }
@@ -121,12 +176,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [DNS Lookup API](https://dnslookup.apiverve.com?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/dnslookup](https://docs.apiverve.com/ref/dnslookup?utm_source=dart&utm_medium=readme)
+- **API Home:** [DNS Lookup API](https://apiverve.com/marketplace/dnslookup?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/dnslookup](https://docs.apiverve.com/ref/dnslookup?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -134,4 +189,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)

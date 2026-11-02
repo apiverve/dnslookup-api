@@ -46,10 +46,11 @@ final _formatPatterns = {
 
 /// DNS Lookup API client.
 ///
-/// For more information, visit: https://dnslookup.apiverve.com?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/dnslookup?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [domain] (required) - The domain name for which you want to lookup the DNS records. Do not include the protocol, and not subdomains (e.g., myspace.com)
+/// * [domain] (required) - The domain or DNS name to look up, without the protocol. Underscore names work too, such as _dmarc.example.com or _sip._tcp.example.com [maxLength: 253]
+/// * [type] - Comma-separated record types to look up. Leave it out for A, AAAA, CNAME, MX, NS, PTR, SRV, SOA, TXT and CAA. HTTPS, SVCB, TLSA, NAPTR, DS and DNSKEY are returned only when named here
 class DnslookupClient {
   final String apiKey;
   final String baseUrl;
@@ -57,7 +58,8 @@ class DnslookupClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'domain': ValidationRule(type: 'string', required: true),
+    'domain': ValidationRule(type: 'string', required: true, maxLength: 253),
+    'type': ValidationRule(type: 'string', required: false),
   };
 
   DnslookupClient(this.apiKey, {
